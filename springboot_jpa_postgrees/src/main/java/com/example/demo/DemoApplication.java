@@ -27,12 +27,4 @@ public class DemoApplication {
         SpringApplication.run(DemoApplication.class, args);
     }
 
-    @Bean
-    CommandLineRunner run(TestRepository repository) {
-        return args -> {
-            TestEntity entity = new TestEntity("INSERIDO PELO SPRING");
-            repository.save(entity);
-            System.out.println(">>> Registro salvo com ID: " + entity.getId());
-        };
-    }
 }
